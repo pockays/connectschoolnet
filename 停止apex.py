@@ -6,6 +6,9 @@ from selenium import webdriver
 import subprocess
 import win32gui
 import time
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
+
 # import psutil
 
 
@@ -67,6 +70,8 @@ if hwnd != 0:
         password.send_keys('113611')
         login = driver.find_element(By.ID, 'login')
         login.click()
+        WebDriverWait(driver, 1000).until(ec.presence_of_element_located((By.ID, 'user_name')))
+        print("成功登录")
     except ElementNotInteractableException:
         print("已登录")
     finally:
