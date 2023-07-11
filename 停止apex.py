@@ -54,10 +54,10 @@ if hwnd != 0:
     #     edit_hwnd = win32gui.FindWindowEx(hwnd, None, 'Chrome_RenderWidgetHostHWND', None)
     #     url = win32gui.GetWindowText(edit_hwnd)
     #     print(url)
-    options = Options()
-    options.add_argument(
-        "--headless")
-    driver = webdriver.Chrome(options=options)
+    # options = Options()
+    # options.add_argument(
+    #     "--headless")
+    driver = webdriver.Chrome()
     driver.get('http://10.11.22.1/index_4.html')
     # 登录
     try:
